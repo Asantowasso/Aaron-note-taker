@@ -10,3 +10,9 @@ const api = require ('./routes/index.js')
 const PORT = process.env.port || 3001;
 
 const app = express();
+
+globalThis.windowVar =
+
+app.use(express.json())
+
+app.listen(3001)
