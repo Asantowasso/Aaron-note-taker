@@ -6,25 +6,30 @@
 
 const express = require('express')
 
-const api = require ('./index.js')
+// const api = require ('./index.js')
 
 const path = require('path')
 
-const PORT = process.env.port || 3001;
-
-app.get('/', (req, res) =>{
-    console.log('working?')
-} )
+const PORT = process.env.port || 3002;
 
 const app = express();
 
+
+
+
+
 // globalThis.windowVar =
+app.use(express.json())
 
 app.use(express.static(path.join(__dirname +'/public')))
 
-app.use(express.json())
 
-app.listen(3001)
+
+require("./routes/html-routes") (app)
+
+require("./routes/api-routes") (app)
+
+app.listen(3001) 
 
 app.listen(PORT, () =>
   console.log(`App listening at http://localhost:${PORT} 🚀`)
