@@ -5,14 +5,27 @@
 // Clicking on the write icon gives the user an empty field to type in 
 
 const express = require('express')
-const api = require ('./routes/index.js')
+
+const api = require ('./index.js')
+
+const path = require('path')
 
 const PORT = process.env.port || 3001;
 
+app.get('/', (req, res) =>{
+    console.log('working?')
+} )
+
 const app = express();
 
-globalThis.windowVar =
+// globalThis.windowVar =
+
+app.use(express.static(path.join(__dirname +'/public')))
 
 app.use(express.json())
 
 app.listen(3001)
+
+app.listen(PORT, () =>
+  console.log(`App listening at http://localhost:${PORT} 🚀`)
+);
