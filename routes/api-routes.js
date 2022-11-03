@@ -1,3 +1,4 @@
+//Creates unique IDs for notes
 const { randomUUID } = require("crypto")
 // const notes = require("../db/db.json")
 const fs = require ("fs")

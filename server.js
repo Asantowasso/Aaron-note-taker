@@ -4,11 +4,11 @@
 // The new note is saved and appears in the left hand column with other notes. When I click on this note in appears in the right hand column.
 // Clicking on the write icon gives the user an empty field to type in 
 
+//Required packages
 const express = require('express')
 
 const fs = require('fs')
 
-// const api = require ('./index.js')
 
 const path = require('path')
 
@@ -19,14 +19,13 @@ const app = express();
 
 
 
-
-// globalThis.windowVar =
+//Middleware
 app.use(express.json())
 
 app.use(express.static(path.join(__dirname +'/public')))
 
 
-
+//Establishing routes
 require("./routes/html-routes") (app)
 
 require("./routes/api-routes") (app)
